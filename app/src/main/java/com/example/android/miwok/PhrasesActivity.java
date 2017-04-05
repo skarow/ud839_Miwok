@@ -17,12 +17,40 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.word_list);
+
+        // create numbers array
+        ArrayList<Word > words = new ArrayList<>();
+
+        words.add(new Word("Yes", "Да"));
+        words.add(new Word("No", "Не"));
+        words.add(new Word("Hello!", "Здавейте!"));
+        words.add(new Word("How are you?", "Как сте?"));
+        words.add(new Word("What are you doing?", "Какво правите?"));
+        words.add(new Word("What are you feeling?", "Как се чувстваш?"));
+        words.add(new Word("I am feeling good?", "Добре съм."));
+        words.add(new Word("Are you comming?", "Идваш ли?"));
+        words.add(new Word("Yes, I'm coming!", "Да, идвам"));
+        words.add(new Word("What is your name?", "Как се казваш?"));
+        words.add(new Word("My name is ...", "Казвам се ..."));
+        words.add(new Word("How old are you?", "На колко си години?"));
+        words.add(new Word("May I order?", "Може ли да поръчам?"));
+        words.add(new Word("How much does it cost", "Колко струва?"));
+        words.add(new Word("How do I get to ...?", "Как да стигна до ...?"));
+        words.add(new Word("Can you help me find ...?", "Можете ли да ми помогнете да стигна до ..."));
+        words.add(new Word("How far away is ...", "Колко е далеч ..."));
+
+        WordAdaptor adaptor = new WordAdaptor(this, words);
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(adaptor);
     }
 }
