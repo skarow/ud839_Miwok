@@ -10,19 +10,28 @@ public class Word {
 
     private String miwokWord;
 
-    public Word(String enWord, String bgWord) {
+    private int picResource;
+
+    public Word(String enWord, String bgWord, int picRes) {
         englishWord = enWord;
         miwokWord = bgWord;
+        picResource = picRes;
     }
 
     /**
      * get
      */
     public String getEnglishWord() {
+
         return englishWord;
     }
 
     public String getMiwokWord() {
+
         return miwokWord;
+    }
+    public int getPicResource() {
+
+        return picResource;
     }
 }

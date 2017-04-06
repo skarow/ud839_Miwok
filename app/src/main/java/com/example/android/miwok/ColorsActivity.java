@@ -31,20 +31,19 @@ public class ColorsActivity extends AppCompatActivity {
         // create numbers array
         ArrayList<Word > words = new ArrayList<>();
 
-        words.add(new Word("red", "червено"));
-        words.add(new Word("green", "зелено"));
-        words.add(new Word("blue", "синьо"));
-        words.add(new Word("black", "черно"));
-        words.add(new Word("gray", "сиво"));
-        words.add(new Word("yellow", "жълто"));
-        words.add(new Word("white", "бяло"));
-        words.add(new Word("orange", "оранжево"));
-        words.add(new Word("pink", "розово"));
-        words.add(new Word("magenta", "магента"));
-        words.add(new Word("purple", "лилаво"));
+        words.add(new Word("red", "червено", R.drawable.color_red));
+        words.add(new Word("green", "зелено", R.drawable.color_green));
+        words.add(new Word("black", "черно", R.drawable.color_black));
+        words.add(new Word("gray", "сиво", R.drawable.color_gray));
+        words.add(new Word("yellow", "жълто", R.drawable.color_mustard_yellow));
+        words.add(new Word("white", "бяло", R.drawable.color_white));
+        words.add(new Word("dusty yellow", "мръсно жълто", R.drawable.color_dusty_yellow));
+        words.add(new Word("brown", "кафяво", R.drawable.color_brown));
 
         WordAdaptor adaptor = new WordAdaptor(this, words);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adaptor);
+        int color = getResources().getColor(R.color.category_colors);
+        listView.setBackgroundColor(color);
     }
 }
