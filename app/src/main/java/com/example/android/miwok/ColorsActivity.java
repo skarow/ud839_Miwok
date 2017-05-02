@@ -24,6 +24,14 @@ import java.util.ArrayList;
 public class ColorsActivity extends AppCompatActivity {
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        clickListener.freePlayer();
+    }
+
+    WordItemClickListener clickListener = new WordItemClickListener();
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
@@ -31,19 +39,21 @@ public class ColorsActivity extends AppCompatActivity {
         // create numbers array
         ArrayList<Word > words = new ArrayList<>();
 
-        words.add(new Word("red", "червено", R.drawable.color_red));
-        words.add(new Word("green", "зелено", R.drawable.color_green));
-        words.add(new Word("black", "черно", R.drawable.color_black));
-        words.add(new Word("gray", "сиво", R.drawable.color_gray));
-        words.add(new Word("yellow", "жълто", R.drawable.color_mustard_yellow));
-        words.add(new Word("white", "бяло", R.drawable.color_white));
-        words.add(new Word("dusty yellow", "мръсно жълто", R.drawable.color_dusty_yellow));
-        words.add(new Word("brown", "кафяво", R.drawable.color_brown));
+        words.add(new Word("red", "червено", R.drawable.color_red, R.raw.color_red));
+        words.add(new Word("green", "зелено", R.drawable.color_green, R.raw.color_green));
+        words.add(new Word("black", "черно", R.drawable.color_black, R.raw.color_black));
+        words.add(new Word("gray", "сиво", R.drawable.color_gray, R.raw.color_gray));
+        words.add(new Word("yellow", "жълто", R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow));
+        words.add(new Word("white", "бяло", R.drawable.color_white, R.raw.color_white));
+        words.add(new Word("dusty yellow", "мръсно жълто", R.drawable.color_dusty_yellow, R.raw.color_dusty_yellow));
+        words.add(new Word("brown", "кафяво", R.drawable.color_brown, R.raw.color_brown));
 
         WordAdaptor adaptor = new WordAdaptor(this, words);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adaptor);
         int color = getResources().getColor(R.color.category_colors);
         listView.setBackgroundColor(color);
+
+        listView.setOnItemClickListener(clickListener );
     }
 }

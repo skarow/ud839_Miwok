@@ -31,23 +31,23 @@ public class PhrasesActivity extends AppCompatActivity {
         // create numbers array
         ArrayList<Word > words = new ArrayList<>();
 
-        words.add(new Word("Yes", "Да", 0));
-        words.add(new Word("No", "Не", 0));
-        words.add(new Word("Hello!", "Здавейте!",0));
-        words.add(new Word("How are you?", "Как сте?",0));
-        words.add(new Word("What are you doing?", "Какво правите?",0));
-        words.add(new Word("What are you feeling?", "Как се чувстваш?",0));
-        words.add(new Word("I am feeling good?", "Добре съм.",0));
-        words.add(new Word("Are you comming?", "Идваш ли?",0));
-        words.add(new Word("Yes, I'm coming!", "Да, идвам",0));
-        words.add(new Word("What is your name?", "Как се казваш?",0));
-        words.add(new Word("My name is ...", "Казвам се ...",0));
-        words.add(new Word("How old are you?", "На колко си години?",0));
-        words.add(new Word("May I order?", "Може ли да поръчам?",0));
-        words.add(new Word("How much does it cost", "Колко струва?",0));
-        words.add(new Word("How do I get to ...?", "Как да стигна до ...?",0));
-        words.add(new Word("Can you help me find ...?", "Можете ли да ми помогнете да стигна до ...",0));
-        words.add(new Word("How far away is ...", "Колко е далеч ...",0));
+        words.add(new Word("Yes", "Да"));
+        words.add(new Word("No", "Не"));
+        words.add(new Word("Hello!", "Здавейте!"));
+        words.add(new Word("How are you?", "Как сте?"));
+        words.add(new Word("What are you doing?", "Какво правите?"));
+        words.add(new Word("What are you feeling?", "Как се чувстваш?"));
+        words.add(new Word("I am feeling good?", "Добре съм."));
+        words.add(new Word("Are you comming?", "Идваш ли?"));
+        words.add(new Word("Yes, I'm coming!", "Да, идвам"));
+        words.add(new Word("What is your name?", "Как се казваш?"));
+        words.add(new Word("My name is ...", "Казвам се ..."));
+        words.add(new Word("How old are you?", "На колко си години?"));
+        words.add(new Word("May I order?", "Може ли да поръчам?"));
+        words.add(new Word("How much does it cost", "Колко струва?"));
+        words.add(new Word("How do I get to ...?", "Как да стигна до ...?"));
+        words.add(new Word("Can you help me find ...?", "Можете ли да ми помогнете да стигна до ..."));
+        words.add(new Word("How far away is ...", "Колко е далеч ..."));
 
         WordAdaptor adaptor = new WordAdaptor(this, words);
         ListView listView = (ListView) findViewById(R.id.list);
